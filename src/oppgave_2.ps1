@@ -5,5 +5,4 @@ param (
     $Navn
 )
 
-# Hva er forskjell mellom '' og "" som begge er streng?
 Write-Output "Hei $Navn!"
