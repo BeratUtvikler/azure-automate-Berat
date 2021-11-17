@@ -4,5 +4,5 @@ param (
     [string]
     $Navn
 )
-#Test
+#TesterVScode
 Write-Output "Hei $Navn!"
