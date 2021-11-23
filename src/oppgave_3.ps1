@@ -6,13 +6,20 @@ $Url = "http://nav-deckofcards.herokuapp.com/shuffle"
 
 $response = Invoke-WebRequest -Uri $Url
 
-$response.content | ConvertFrom-Json
-
 $cards = $response.Content | ConvertFrom-Json
 
-foreach ($card in $cards) { 
-    $kortstokk = $kortstokk + ($card.suit[0] + $card.value)
+function kortstokkTilStreng {
+    [OutputType([string])]
+    param (
+        [object[]]
+        $kortstokk
+    )
+    $streng = ""
+    foreach ($kort in $kortstokk) {
+        $streng = $streng + "$($kort.suit[0])" + $kort.value + " "
+    }
+    return $streng
 }
 
-Write-Output "kortstokk: $kortstokk"
+Write-Output "kortstokk:$(kortStokkTilStreng -kortstokk $cards)"
 
