@@ -1,11 +1,11 @@
 name: oppgave 15
+
 on:
   push:
   workflow_dispatch:
-    
 
 jobs:
-  job1:
+  beratjob:
     defaults:
       run:
         shell: pwsh
@@ -17,13 +17,3 @@ jobs:
 
       - name: Run Blackjack script file
         run: .\src\oppgave_10.ps1
-
-        name: login via az module
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE.CREDENTILAS }}
-          enable-AzPSSession: true
-
-
-        name: install and cache powershell modules
-        uses:potatoqualitee/psmodule
