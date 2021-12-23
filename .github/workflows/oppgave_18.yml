@@ -1,5 +1,8 @@
 
 - name: 'Run cleanup script'
+  on:
+    push:
+    workflow_dispatch:
   uses: azure/powershell@v1
   with:
     inlineScript: ./funcapp/cleanup.ps1 -resourceGroupName 'berat-workshop-7eogt4brgj2n2'
@@ -14,4 +17,3 @@
       az cache purge
       az account clear
     azPSVersion: "latest"
-    #Test
