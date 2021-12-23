@@ -14,3 +14,4 @@
       az cache purge
       az account clear
     azPSVersion: "latest"
+    #Test
