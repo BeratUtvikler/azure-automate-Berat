@@ -33,3 +33,4 @@ jobs:
             az cache purge
             az account clear
           azPSVersion: "latest"
+          #slettetRepository
